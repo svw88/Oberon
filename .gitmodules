@@ -1,3 +1,15 @@
 [submodule "Oberon/vendor/spdlog"]
 	path = Oberon/vendor/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "Oberon/vendor/glm"]
+	path = Oberon/vendor/glm
+	url = https://github.com/g-truc/glm
+[submodule "Oberon/vendor/imgui"]
+	path = Oberon/vendor/imgui
+	url = https://github.com/ocornut/imgui
+[submodule "Oberon/vendor/yaml-cpp"]
+	path = Oberon/vendor/yaml-cpp
+	url = https://github.com/jbeder/yaml-cpp
+[submodule "Oberon/vendor/ImGuizmo"]
+	path = Oberon/vendor/ImGuizmo
+	url = https://github.com/CedricGuillemet/ImGuizmo

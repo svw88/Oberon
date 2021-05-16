@@ -2,9 +2,9 @@
 
 // For use by Oberon Applications
 
-#include "Oberon/Application.h"
-#include "Oberon/Log.h"
+#include "Oberon/Core/Application.h"
+#include "Oberon/Core/Log.h"
 
 // ------Entry Point-------------------------------
-#include "Oberon/EntryPoint.h"
+#include "Oberon/Core/EntryPoint.h"
 // ------------------------------------------------

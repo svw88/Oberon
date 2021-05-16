@@ -1,16 +1,20 @@
-#include "Oberon.h"
+#include <Oberon.h>
+#include <Oberon/Core/EntryPoint.h>
+
+#include "Sandbox2D.h"
+#include "ExampleLayer.h"
 
 class Sandbox : public Oberon::Application
 {
 public:
-	Sandbox() 
+	Sandbox()
 	{
-
+		// PushLayer(new ExampleLayer());
+		PushLayer(new Sandbox2D());
 	}
 
 	~Sandbox()
 	{
-
 	}
 };
 

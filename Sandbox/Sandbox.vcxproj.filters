@@ -2,5 +2,11 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="src\SandboxApp.cpp" />
+    <ClCompile Include="ExampleLayer.cpp" />
+    <ClCompile Include="Sandbox2D.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ExampleLayer.h" />
+    <ClInclude Include="Sandbox2D.h" />
   </ItemGroup>
 </Project>
