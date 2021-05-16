@@ -1,0 +1,3 @@
+[submodule "Oberon/vendor/spdlog"]
+	path = Oberon/vendor/spdlog
+	url = https://github.com/gabime/spdlog
