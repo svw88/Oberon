@@ -65,6 +65,6 @@ namespace Oberon {
 	};
 
 	// To be defined in CLIENT
-	Application* CreateApplication(ApplicationCommandLineArgs args);
+	Application* CreateApplication();
 
 }

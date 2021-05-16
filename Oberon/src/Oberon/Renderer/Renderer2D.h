@@ -1,32 +1,59 @@
 #pragma once
 
-#include "Oberon/Renderer/RenderCommand.h"
-
 #include "Oberon/Renderer/OrthographicCamera.h"
-#include "Oberon/Renderer/Shader.h"
+
+#include "Oberon/Renderer/Texture.h"
+
+#include "Oberon/Renderer/Camera.h"
+#include "Oberon/Renderer/EditorCamera.h"
+
+#include "Oberon/Scene/Components.h"
 
 namespace Oberon {
 
-	class Renderer
+	class Renderer2D
 	{
 	public:
 		static void Init();
 		static void Shutdown();
 
-		static void OnWindowResize(uint32_t width, uint32_t height);
-
-		static void BeginScene(OrthographicCamera& camera);
+		static void BeginScene(const Camera& camera, const glm::mat4& transform);
+		static void BeginScene(const EditorCamera& camera);
+		static void BeginScene(const OrthographicCamera& camera); // TODO: Remove
 		static void EndScene();
+		static void Flush();
 
-		static void Submit(const Ref<Shader>& shader, const Ref<VertexArray>& vertexArray, const glm::mat4& transform = glm::mat4(1.0f));
+		// Primitives
+		static void DrawQuad(const glm::vec2& position, const glm::vec2& size, const glm::vec4& color);
+		static void DrawQuad(const glm::vec3& position, const glm::vec2& size, const glm::vec4& color);
+		static void DrawQuad(const glm::vec2& position, const glm::vec2& size, const Ref<Texture2D>& texture, float tilingFactor = 1.0f, const glm::vec4& tintColor = glm::vec4(1.0f));
+		static void DrawQuad(const glm::vec3& position, const glm::vec2& size, const Ref<Texture2D>& texture, float tilingFactor = 1.0f, const glm::vec4& tintColor = glm::vec4(1.0f));
 
-		static RendererAPI::API GetAPI() { return RendererAPI::GetAPI(); }
-	private:
-		struct SceneData
+		static void DrawQuad(const glm::mat4& transform, const glm::vec4& color, int entityID = -1);
+		static void DrawQuad(const glm::mat4& transform, const Ref<Texture2D>& texture, float tilingFactor = 1.0f, const glm::vec4& tintColor = glm::vec4(1.0f), int entityID = -1);
+
+		static void DrawRotatedQuad(const glm::vec2& position, const glm::vec2& size, float rotation, const glm::vec4& color);
+		static void DrawRotatedQuad(const glm::vec3& position, const glm::vec2& size, float rotation, const glm::vec4& color);
+		static void DrawRotatedQuad(const glm::vec2& position, const glm::vec2& size, float rotation, const Ref<Texture2D>& texture, float tilingFactor = 1.0f, const glm::vec4& tintColor = glm::vec4(1.0f));
+		static void DrawRotatedQuad(const glm::vec3& position, const glm::vec2& size, float rotation, const Ref<Texture2D>& texture, float tilingFactor = 1.0f, const glm::vec4& tintColor = glm::vec4(1.0f));
+
+		static void DrawSprite(const glm::mat4& transform, SpriteRendererComponent& src, int entityID);
+
+		// Stats
+		struct Statistics
 		{
-			glm::mat4 ViewProjectionMatrix;
-		};
+			uint32_t DrawCalls = 0;
+			uint32_t QuadCount = 0;
 
-		static Scope<SceneData> s_SceneData;
+			uint32_t GetTotalVertexCount() const { return QuadCount * 4; }
+			uint32_t GetTotalIndexCount() const { return QuadCount * 6; }
+		};
+		static void ResetStats();
+		static Statistics GetStats();
+
+	private:
+		static void StartBatch();
+		static void NextBatch();
 	};
+
 }

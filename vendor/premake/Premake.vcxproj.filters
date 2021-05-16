@@ -7,6 +7,21 @@
     <Filter Include="..\Oberon">
       <UniqueIdentifier>{B581AC35-21EC-60AC-6A2A-1252D6D33E01}</UniqueIdentifier>
     </Filter>
+    <Filter Include="..\Oberon\vendor">
+      <UniqueIdentifier>{727A900F-5E73-AF61-87A5-94E673FD8E6D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="..\Oberon\vendor\glad">
+      <UniqueIdentifier>{B9A465EC-2511-21E7-EE04-B9445A30434F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="..\Oberon\vendor\glfw">
+      <UniqueIdentifier>{71A565EC-DD11-21E7-A605-B9441231434F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="..\Oberon\vendor\imgui">
+      <UniqueIdentifier>{5C153F79-480F-68CB-317C-FEDB1D15CE37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="..\Oberon\vendor\yaml-cpp">
+      <UniqueIdentifier>{64C134A6-D083-6830-1934-F7BC8535410E}</UniqueIdentifier>
+    </Filter>
     <Filter Include="..\Sandbox">
       <UniqueIdentifier>{3F7B6B1D-2B33-AD6A-943A-86C68011485B}</UniqueIdentifier>
     </Filter>
@@ -14,6 +29,18 @@
   <ItemGroup>
     <None Include="..\..\Oberon\premake5.lua">
       <Filter>..\Oberon</Filter>
+    </None>
+    <None Include="..\..\Oberon\vendor\glad\premake5.lua">
+      <Filter>..\Oberon\vendor\glad</Filter>
+    </None>
+    <None Include="..\..\Oberon\vendor\glfw\premake5.lua">
+      <Filter>..\Oberon\vendor\glfw</Filter>
+    </None>
+    <None Include="..\..\Oberon\vendor\imgui\premake5.lua">
+      <Filter>..\Oberon\vendor\imgui</Filter>
+    </None>
+    <None Include="..\..\Oberon\vendor\yaml-cpp\premake5.lua">
+      <Filter>..\Oberon\vendor\yaml-cpp</Filter>
     </None>
     <None Include="..\..\Sandbox\premake5.lua">
       <Filter>..\Sandbox</Filter>
