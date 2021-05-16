@@ -1,13 +1,32 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\Oberon\Application.cpp" />
+    <Filter Include="Oberon">
+      <UniqueIdentifier>{CA454DC7-B6E7-779D-9FA2-8BF18BE3FEED}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Oberon\Core.h" />
-    <ClInclude Include="src\Oberon\Application.h" />
     <ClInclude Include="src\Oberon.h" />
-    <ClInclude Include="src\Oberon\EntryPoint.h" />
+    <ClInclude Include="src\Oberon\Application.h">
+      <Filter>Oberon</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Oberon\Core.h">
+      <Filter>Oberon</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Oberon\EntryPoint.h">
+      <Filter>Oberon</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Oberon\Log.h">
+      <Filter>Oberon</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Oberon\Application.cpp">
+      <Filter>Oberon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Oberon\Log.cpp">
+      <Filter>Oberon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VulkanApi.cpp" />
   </ItemGroup>
 </Project>
